@@ -13,13 +13,16 @@ header nav.navbar {
     padding: 10px 20px;
 }
 
+.nav-item{
+    font-size: 18px;
+}
+
 header nav.navbar .nav-link {
     color: rgb(163, 111, 111);
-    font-size: 13px;
+    font-size: 16px;
     text-decoration: none;
     margin-right: 20px;
 }
-
 header nav.navbar .nav-link:hover {
     color: hsl(49, 31%, 58%); /*color verde claro en formato hexadecimal*/
 }
