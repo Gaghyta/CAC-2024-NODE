@@ -1,147 +1,137 @@
 body {
-    background-color: #493d3d;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  background-color: #493d3d;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header nav.navbar {
-    background-color: #1a1b1b;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+  background-color: #1a1b1b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
-.nav-item{
-    font-size: 18px;
+.nav-item {
+  font-size: 18px;
 }
 
 header nav.navbar .nav-link {
-    color: rgb(163, 111, 111);
-    font-size: 16px;
-    text-decoration: none;
-    margin-right: 20px;
+  color: rgb(163, 111, 111);
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 20px;
 }
 header nav.navbar .nav-link:hover {
-    color: hsl(49, 31%, 58%); /*color verde claro en formato hexadecimal*/
+  color: hsl(49, 31%, 58%); /*color verde claro en formato hexadecimal*/
 }
 
 header nav.navbar .navbar-brand img {
-    
-    height: 100px;
-    margin-right: 20px;
-    /*margin-left: 2rem;
+  height: 100px;
+  margin-right: 20px;
+  /*margin-left: 2rem;
     margin-right: 2rem;  espacio entre el logo y el texto 
     height: 50px;*/
 }
 
-
-
 .hamburguesa {
-    background-color: #70725b;
-   /* margin-top: 1.0em;
+  background-color: #70725b;
+  /* margin-top: 1.0em;
     margin-bottom: 1.5em;
     margin-right: 1.5em;*/
 }
 
 header nav.navbar ul.navbar-nav {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 header nav.navbar ul.navbar-nav li.nav-item {
-    display: inline;
+  display: inline;
 }
 
-
-.oscurecer-imagen{
-    filter: brightness(0.5);
-    /*filter: opacity(0.5);*/
-   /*linear-gradient(rgba(0, 0, 0, 0.5));*/
+.oscurecer-imagen {
+  filter: brightness(0.5);
+  /*filter: opacity(0.5);*/
+  /*linear-gradient(rgba(0, 0, 0, 0.5));*/
 }
 
-
-.carousel-inner{
-    height: 70%;
-    margin-top:3em;
-    margin-bottom:3em;
+.carousel-inner {
+  height: 70%;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 .carousel-item {
-    height: 100%;
+  height: 100%;
 }
 
-
-.imagen-espacio-ma-cuisine{
-    height: 50%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+.imagen-espacio-ma-cuisine {
+  height: 50%;
+  margin-left: 10%;
+  margin-right: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-
 
 h2 {
-    color: rgb(133, 140, 104);
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 15em;
-    margin-bottom: 2em;
-    margin-left: 15em;
-    text-align: justify;
-    align-items: center;
+  color: rgb(133, 140, 104);
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15em;
+  margin-bottom: 2em;
+  margin-left: 15em;
+  text-align: center;
+  align-items: center;
 }
 
 /* Estilos para el párrafo p */
 p {
-    color: rgb(207, 210, 181);
-    font-size: 16px;
-    margin-right: 15em;
-    margin-bottom: 2em;
-    margin-left: 15em;
-    text-align: justify;
+  color: rgb(207, 210, 181);
+  font-size: 16px;
+  margin-right: 15em;
+  margin-bottom: 2em;
+  margin-left: 15em;
+  text-align: justify;
 }
 
-.nuestra-coleccion{
-
-    font-family: Helvetica,sans-serif;
-    font-size: 1.75em;
-    font-weight: 300;
-    font-style: oblique;
-    font-variant: initial;
-    color: #a09a76;
-
+.nuestra-coleccion {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.75em;
+  font-weight: 300;
+  font-style: oblique;
+  font-variant: initial;
+  color: #a09a76;
 }
 
-.cards{
-    border-radius: 0.5em;
-
+.cards {
+  border-radius: 0.5em;
 }
 
-.img-card{
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    margin: 0.5em;
+.img-card {
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  margin: 0.5em;
 }
 
 .custom-card-bg {
-    background-color: #c4ad8e;
-    color: #303321;
-    padding: 8px
+  background-color: #c4ad8e;
+  color: #303321;
+  padding: 8px;
 }
 
-#conocermas{
-    padding: 2px 2px;
+#conocermas {
+  padding: 2px 2px;
 }
 
-.container-fluid{
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 2em;
-    display: flex;
-    flex-wrap: wrap;
+.container-fluid {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*.row {
@@ -149,178 +139,223 @@ p {
 }*/
 
 .imagen-bs-octubre {
-    padding:0;
-    width: 50%;
-    margin: 0;
-    flex: 0 0 50%;
-    object-fit: cover;
+  padding: 0;
+  width: 50%;
+  margin: 0;
+  flex: 0 0 50%;
+  object-fit: cover;
 }
 
 .text.bs-octubre-text {
-    margin: 0;
-    padding:2em;
-    background-color: #404449;
-    color: rgb(203, 187, 157); 
-    width: 50%;
-    /*flex: 0 0 70%;*/
+  margin: 0;
+  padding: 2em;
+  background-color: #404449;
+  color: rgb(203, 187, 157);
+  width: 50%;
+  /*flex: 0 0 70%;*/
 }
 
-.bs-octubre-rectangulo{
-    height: auto;
-    /*width: 80%; */
-    flex: 0 0 100%;
+.bs-octubre-rectangulo {
+  height: auto;
+  /*width: 80%; */
+  flex: 0 0 100%;
 }
 
 #comprar-tickets {
-    margin-right: 1em;
-    background-color: #85f395;
-    border-color: #3ff45a;
-    color: rgb(16, 22, 26)
+  margin-right: 1em;
+  background-color: #85f395;
+  border-color: #3ff45a;
+  color: rgb(16, 22, 26);
 }
 
-.btn-info{
-    margin-right: 1em !important;
-    background-color: #407047!important;
-    border-color: #224527 !important;
-    color: rgb(16, 22, 26)!important;
+.btn-info {
+  background-color: #407047 !important;
+  border-color: #224527 !important;
+  color: rgb(16, 22, 26) !important;
 }
-.btn-info:active{
-    margin-right: 1em !important;
-    background-color: #59562c!important;
-    border-color: #313711 !important;
-    color: rgb(16, 22, 26)!important;
-
+.btn-info:active {
+  margin-right: 1em !important;
+  background-color: #59562c !important;
+  border-color: #313711 !important;
+  color: rgb(16, 22, 26) !important;
 }
 
-.recordatorio-text-area{
-    font-weight: 300;
-    font: 0.95em sans-serif;
-    color: #8a8686;
-    font-stretch: semi-expanded;
+.recordatorio-text-area {
+  font-weight: 300;
+  font: 0.95em sans-serif;
+  color: #8a8686;
+  font-stretch: semi-expanded;
 }
 
-.bs-octubre-text{
-    font-size: smaller;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 2em;
-    align-items: center;
-    color: #000000;
+.bs-octubre-text {
+  font-size: smaller;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  align-items: center;
+  color: #000000;
 }
 
-#rectangulo-botonera{
-    margin-top: 0%;
-    margin-bottom:5%;
-    padding-top:5%;
-    padding-bottom:5%;
-   background-color: #044e68;
-    z-index: 80; 
-    box-sizing: border-box;
+#rectangulo-botonera {
+  margin-top: 0%;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #044e68;
+  z-index: 80;
+  box-sizing: border-box;
 }
 
 #quiero-ser-orador {
-    margin-right: 1em;
+  margin-right: 1em;
 }
 
 u {
-
-    color: #3e413e;
-    text-decoration-style: dotted;
-    text-underline-offset:0.3em;
+  color: #3e413e;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.3em;
 }
 
-footer{
-    margin-top: 3em;
-    min-height: 5em;
-    background-color: #1d1e1f;
-    /*background-image: linear-gradient(rgb(20, 21, 21),rgb(75, 65, 75));*/
+footer {
+  margin-top: 3em;
+  min-height: 5em;
+  background-color: #1d1e1f;
+  /*background-image: linear-gradient(rgb(20, 21, 21),rgb(75, 65, 75));*/
 }
 
-a.nav-link{
-    color: #b9acac;
+a.nav-link {
+  color: #b9acac;
 }
 
-a.nav-link:hover{
-    color: #e5e2b7;
+a.nav-link:hover {
+  color: #e5e2b7;
 }
 
 /* ************************* MA-CUISINE ******************************** */
 
 /* Estilos para las imágenes */
 .imagen-espacio-ma-cuisine {
-    display: block;
-    max-width: 80%;
-    height: auto;
-    margin: 5% auto;
-    border-radius: 0.5em;
-    transition: transform 0.3s ease-in-out;
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: 5% auto;
+  border-radius: 0.5em;
+  transition: transform 0.3s ease-in-out;
 }
 
 .imagen-espacio-ma-cuisine:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .imagen-espacio-ma-cuisine.zoom {
-    transform: scale(1.8);
+  transform: scale(1.8);
 }
-
 
 /* ************************* MENU ******************************** */
 
-
 .menu-card {
-    background-color: #1a1b1b;
-    border-radius: 1em;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: #1a1b1b;
+  border-radius: 1em;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .menu-card img {
-    width: 50%;
-    border-radius: 1em;
+  width: 100%;
+  border-radius: 1em;
 }
 
 .menu-card-content {
-    padding: 0 20px;
-    color: #cfd2b5;
+  padding: 0 20px;
+  color: #cfd2b5;
 }
 
 .menu-card-title {
-    color: #85f395;
-    font-size: 24px;
-    margin-bottom: 10px;
+  color: #85f395;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin: 15px;
 }
 
 .menu-card-text {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
+  margin: 5px;
 }
 
 /* ************************* CONTACTO ******************************** */
 
 .contact-page {
-    margin-top: 50px; /* Ajusta este valor para mayor o menor separación */
-    background-color: #1a1b1b;
-    padding: 50px;
-    border-radius: 10px;
+  margin-top: 50px; /* Ajusta este valor para mayor o menor separación */
+  background-color: #1a1b1b;
+  padding: 50px;
+  border-radius: 10px;
 }
 
-
 .contact-page .row {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .contact-page .mb-3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .contact-page textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-    height: 150px; /* Altura inicial */
-    min-height: 150px; /* Altura mínima */
+  resize: vertical; /* Permite redimensionar verticalmente */
+  height: 150px; /* Altura inicial */
+  min-height: 150px; /* Altura mínima */
 }
 
-.custom-input{
-    background-color: #d8e3cb;
+.custom-input {
+  background-color: #d8e3cb;
+}
+.form-txt {
+  text-align: center;
+}
+.button {
+  text-align: center;
+}
+
+/* *************************RESPONSIVE PARA TABLET************************* */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /*  INDEX   */
+  p {
+    margin-right: 5em;
+    margin-bottom: 2em;
+    margin-left: 5em;
+  }
+  h2 {
+    margin-right: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+  }
+}
+
+/*  MA CUISINE   */
+.container-img-macuisine {
+  display: flex;
+  flex-direction: row !important;
+}
+
+/* *************************RESPONSIVE PARA CELULAR************************* */
+@media only screen and (max-width: 767px) {
+  /*  INDEX   */
+  p {
+    margin-right: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+  }
+  h2 {
+    margin-right: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+  }
+}
+
+/*  MA CUISINE   */
+.container-img-macuisine {
+  display: flex;
+  flex-direction: row !important;
 }
