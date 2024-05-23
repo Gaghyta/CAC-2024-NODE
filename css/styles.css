@@ -333,12 +333,6 @@ a.nav-link:hover {
   }
 }
 
-/*  MA CUISINE   */
-.container-img-macuisine {
-  display: flex;
-  flex-direction: row !important;
-}
-
 /* *************************RESPONSIVE PARA CELULAR************************* */
 @media only screen and (max-width: 767px) {
   /*  INDEX   */
@@ -354,8 +348,34 @@ a.nav-link:hover {
   }
 }
 
-/*  MA CUISINE   */
-.container-img-macuisine {
-  display: flex;
-  flex-direction: row !important;
+/* ************************** SECCION MA CUISINE **************************  */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px; /* Ajustamos la separación entre imágenes */
+  margin: 50px;
+}
+
+/* Para cada imagen en cada columna */
+.img-item {
+  position: relative;
+  overflow: hidden;
+  margin: 5px 0;
+  width: 100%;
+  height: auto;
+}
+
+.titulo-mcuisine {
+  margin-top: 1em;
+}
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .img-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    margin: 20px; /* Ajusta el margen para móviles si es necesario */
+    gap: 0;
+  }
+  .img-item {
+    margin-top: 30px;
+  }
 }
