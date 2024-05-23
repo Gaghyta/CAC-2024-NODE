@@ -115,6 +115,11 @@
         </div>
       </div>
     </div>
+    <!-- Modal para mostrar la imagen aumentada -->
+    <div id="modal" class="modal">
+      <span id="close" class="close">&times;</span>
+      <img class="modal-content" id="modal-img" />
+    </div>
 
     <footer class="">
       <nav class="navbar navbar-expand-md">
@@ -127,7 +132,7 @@
               <a class="nav-link" href="index.html">MA CUISINE Prensa</a>
             </li>
             <li class="nav-item footer">
-              <a class="nav-link footer" href="index.html">Diseño por CAnton</a>
+              <a class="nav-link footer" href="index.html">Diseño por Canton</a>
             </li>
             <li class="nav-item">
               <a class="nav-link footer" href="index.html"
@@ -152,13 +157,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // JavaScript para manejar el efecto de zoom al hacer clic
-      document
-        .querySelector(".imagen-espacio-ma-cuisine")
-        .addEventListener("click", function () {
-          this.classList.toggle("zoom");
-        });
-    </script>
+    <script defer src="./js/js.js"></script>
   </body>
 </html>
