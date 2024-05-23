@@ -409,7 +409,7 @@ a.nav-link:hover {
   margin: auto;
   display: block;
   width: auto;
-  height: 80vh;
+  max-width: 90vw;
 }
 
 .close {
