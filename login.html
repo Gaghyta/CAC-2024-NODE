@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="./img/logo-france.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css"
+      integrity="sha512-nqrqz6xPug/bD0w6eBYU6p1c6HohZ0Sh1/KkOzL9bS5e5Tp5/V5pzY+Yd5o4Q4/Z4Z4wyikV7E+Bpx87XJQrWQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo-france.png" alt="Logo" />
+          <!-- <span class="logo-france">Ma cuisine</span> -->
+        </a>
+        <button
+          class="navbar-toggler hamburguesa"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!--<span>☰</span>-->
+        </button>
+        <div class="container-fluid">
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ma-cuisine.html">Ma Cuisine</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Registro/Ingreso</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="d-flex justify-content-center px-5">
+      <div id="contenedor-login" class="ingreso">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">Bienvenido</div>
+            <form id="loginform">
+              <input
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
+                required
+              />
+
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
+              />
+
+              <button type="submit" title="Ingresar" name="Ingresar">
+                Ingresar
+              </button>
+            </form>
+            <div class="pie-form">
+              <a href="#">¿Perdiste tu contraseña?</a>
+              <a id="registrate">¿No tienes Cuenta? Registrate</a>
+              <a id="eliminarUsuario">Eliminar usuario</a>
+            </div>
+          </div>
+          <div class="inferior">
+            <a href="login.html">Volver</a>
+          </div>
+        </div>
+      </div>
+      <div id="contenedor-login" class="registro hidden">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">Registro</div>
+            <form id="loginform">
+              <input
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
+                required
+              />
+
+              <input
+                type="email"
+                placeholder="Correo electronico"
+                name="email"
+                required
+              />
+
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
+              />
+
+              <button type="submit" title="Registrar" name="Registrar">
+                Registrar
+              </button>
+            </form>
+          </div>
+          <div class="inferior">
+            <a id="volverLogin">Volver</a>
+          </div>
+        </div>
+      </div>
+      <div id="contenedor-login" class="borrar-cuenta hidden">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">Eliminar cuenta</div>
+            <form id="loginform">
+              <input
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
+                required
+              />
+
+              <input
+                type="email"
+                placeholder="Correo electronico"
+                name="email"
+                required
+              />
+
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
+              />
+
+              <button type="submit" title="borrar" name="borrar">Borrar</button>
+            </form>
+          </div>
+          <div class="inferior">
+            <a id="volverLoginEliminar">Volver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="">
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid justify-content-center">
+          <ul class="d-flex justify-content-evenly nav">
+            <li class="nav-item footer">
+              <a class="nav-link" href="contacto.html">Contáctenos</a>
+            </li>
+            <li class="nav-item footer">
+              <a class="nav-link" href="index.html">MA CUISINE Prensa</a>
+            </li>
+            <li class="nav-item footer">
+              <a class="nav-link footer" href="index.html">Diseño por Grupo9</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link footer" href="index.html"
+                >Términos y condiciones</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link footer" href="index.html"
+                >Políticas de privacidad</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="buy-tickets.html"
+                >E-mail:contact@macuisine.com</a
+              >
+            </li>
+          </ul>
+          <!-- <div class="collapse navbar-collapse justify-content-end">
+          </div>-->
+        </div>
+      </nav>
+    </footer>
+    <script>
+      document
+        .getElementById("registrate")
+        .addEventListener("click", function () {
+          document.querySelector(".ingreso").classList.add("hidden");
+          document.querySelector(".registro").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("eliminarUsuario")
+        .addEventListener("click", function () {
+          document.querySelector(".ingreso").classList.add("hidden");
+          document.querySelector(".borrar-cuenta").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("volverLogin")
+        .addEventListener("click", function () {
+          document.querySelector(".registro").classList.add("hidden");
+          document.querySelector(".ingreso").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("volverLoginEliminar")
+        .addEventListener("click", function () {
+          document.querySelector(".borrar-cuenta").classList.add("hidden");
+          document.querySelector(".ingreso").classList.remove("hidden");
+        });
+    </script>
+    <script>
+      // JavaScript para activar las validaciones
+      (function () {
+        "use strict";
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
