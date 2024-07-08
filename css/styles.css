@@ -398,27 +398,27 @@ a.nav-link:hover {
   transform: translateY(0);
 }
 
-/*/// LOGIN ///*/
+/* ************************** SECCION LOGIN **************************  */
 
 #login {
-  margin-top: 50px;
-  padding: 20px;
+  margin-top: 3em;
+  padding: 3em;
   background-color: #1a1b1b;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(66, 52, 33, 0.2);
 }
 
 #central {
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
-  padding: 20px;
+  padding: 3em;
 }
 
 .titulo {
   text-align: center;
-  font-size: 24px;
+  font-size: 1.75em;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.5em;
   color: rgb(163, 111, 111);
 }
 
@@ -426,26 +426,26 @@ a.nav-link:hover {
 #loginform input[type="email"],
 #loginform input[type="password"] {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
+  padding: 1em;
+  margin: 1.25em 0;
+  border: 1px solid #daced5;
+  border-radius: 4px;
 }
 
 #loginform button {
   width: 100%;
-  padding: 10px;
+  padding: 1em;
   margin: 10px 0;
-  background-color: #007bff;
-  color: white;
+  background-color: #cda0b4;
+  color: rgb(30, 31, 27);
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
 }
 
 #loginform button:hover {
-  background-color: #0056b3;
+  background-color: #e6edd3;
 }
 
 .pie-form {
@@ -456,7 +456,7 @@ a.nav-link:hover {
 }
 
 .pie-form a {
-  color: #007bff;
+  color: #cda0b4;
   text-decoration: none;
   margin: 0 10px;
 }
@@ -471,7 +471,7 @@ a.nav-link:hover {
 }
 
 .inferior a {
-  color: #007bff;
+  color: #cda0b4;
   text-decoration: none;
 }
 
@@ -483,18 +483,21 @@ a.nav-link:hover {
   display: none;
 }
 #eliminarUsuario {
-  color: #007bff;
+  color: #cda0b4;
   cursor: pointer;
 }
 #registrate {
-  color: #007bff;
+  color: #cda0b4;
   cursor: pointer;
 }
-#volverLogin {
-  color: #007bff;
+/* #volverLogin {
+  color: #cda0b4;
   cursor: pointer;
-}
+} */
+#volverLogin 
 #volverLoginEliminar {
-  color: #007bff;
+  color: #cda0b4;
   cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 2.5px;
 }
