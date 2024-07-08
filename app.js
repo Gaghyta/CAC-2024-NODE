@@ -1,10 +1,18 @@
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql2');
+//const fetch = require('node-fetch');
 require('dotenv').config(); // Para cargar las variables de entorno desde .env
 
 const app = express();
+
+//const ejs = require('ejs');
+
+
 const port = process.env.PORT || 3000;
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 
 // Configuración de la conexión a la base de datos
 const db = mysql.createConnection({
@@ -48,6 +56,25 @@ app.get('/contacto.html', (req, res) => {
 });
 
 // Endpoint para obtener todos los usuarios
+/* app.get('/usuarios.html', (req, res) => {
+    const sql = 'SELECT * FROM usuarios'; // Ajusta según el nombre real de tu tabla de usuarios
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error('Error al obtener usuarios:', err);
+            //res.status(500).json({ error: 'Error en la base de datos' });
+            res.status(500).send({ error: 'Error en la base de datos' });
+            return;
+        }
+        console.log('Resultados de la consulta:', results); 
+        //res.status(200).json(results);
+        res.render('usuarios', { usuarios: results });
+        //res.sendFile(path.join(__dirname, 'public', 'usuarios.html'));
+        //res.sendFile(path.join(__dirname, 'views', 'usuarios.html'));
+    
+    });
+}); 
+ */
+
 app.get('/usuarios.html', (req, res) => {
     const sql = 'SELECT * FROM usuarios'; // Ajusta según el nombre real de tu tabla de usuarios
     db.query(sql, (err, results) => {
@@ -56,9 +83,11 @@ app.get('/usuarios.html', (req, res) => {
             res.status(500).json({ error: 'Error en la base de datos' });
             return;
         }
-        res.status(200).json(results);
+        res.json(results);
     });
 });
+
+//app.use(express.static(path.join(__dirname, 'views')));
 
 // Iniciar el servidor
 app.listen(port, () => {

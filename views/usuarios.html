@@ -30,7 +30,7 @@
     <script>
         $(document).ready(function() {
             // obtener los usuarios
-            $.get('/usuarios', function(data) {
+            $.get('/usuarios.html', function(data) {
                 // Limpiar la tabla
                 $('#tabla-usuarios').empty();
                 
@@ -38,7 +38,7 @@
                 data.forEach(function(usuario) {
                     $('#tabla-usuarios').append(`
                         <tr>
-                            <td>${usuario.id}</td>
+                            <td>${usuario.user_id}</td>
                             <td>${usuario.nombre}</td>
                             <td>${usuario.email}</td>
                         </tr>
@@ -47,5 +47,6 @@
             });
         });
     </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
