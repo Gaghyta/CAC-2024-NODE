@@ -30,6 +30,7 @@ header nav.navbar .navbar-brand img {
     margin-right: 2rem;  espacio entre el logo y el texto 
     height: 50px;*/
 }
+
 .hamburguesa {
   background-color: #70725b;
   /* margin-top: 1.0em;
@@ -395,4 +396,105 @@ a.nav-link:hover {
 .menu-card.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/*/// LOGIN ///*/
+
+#login {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #1a1b1b;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(66, 52, 33, 0.2);
+}
+
+#central {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgb(163, 111, 111);
+}
+
+#loginform input[type="text"],
+#loginform input[type="email"],
+#loginform input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+#loginform button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#loginform button:hover {
+  background-color: #0056b3;
+}
+
+.pie-form {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pie-form a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.pie-form a:hover {
+  text-decoration: underline;
+}
+
+.inferior {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.inferior a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.inferior a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+#eliminarUsuario {
+  color: #007bff;
+  cursor: pointer;
+}
+#registrate {
+  color: #007bff;
+  cursor: pointer;
+}
+#volverLogin {
+  color: #007bff;
+  cursor: pointer;
+}
+#volverLoginEliminar {
+  color: #007bff;
+  cursor: pointer;
 }
