@@ -31,20 +31,24 @@ app.get('/', (req, res) => {
 });
 
 // Rutas de las otras vistas
-app.get('/login', (req, res) => {
+app.get('/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'login.html'));
 });
 
-app.get('/ma-cuisine', (req, res) => {
+app.get('/ma-cuisine.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'ma-cuisine.html'));
 });
 
-app.get('/menu', (req, res) => {
+app.get('/menu.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'menu.html'));
 });
 
+app.get('/contacto.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'contacto.html'));
+});
+
 // Endpoint para obtener todos los usuarios
-app.get('/api/usuarios', (req, res) => {
+app.get('/api/usuarios.html', (req, res) => {
     const sql = 'SELECT * FROM usuarios'; // Ajusta según el nombre real de tu tabla de usuarios
     db.query(sql, (err, results) => {
         if (err) {
