@@ -48,7 +48,7 @@ app.get('/contacto.html', (req, res) => {
 });
 
 // Endpoint para obtener todos los usuarios
-app.get('/api/usuarios.html', (req, res) => {
+app.get('/usuarios.html', (req, res) => {
     const sql = 'SELECT * FROM usuarios'; // Ajusta según el nombre real de tu tabla de usuarios
     db.query(sql, (err, results) => {
         if (err) {
