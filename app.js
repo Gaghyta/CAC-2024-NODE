@@ -19,8 +19,28 @@ db.connect((err) => {
     if (err) {
         console.error('Error conectando a la base de datos:', err);
         return;
-    }
-    console.log('Conectado a la base de datos MySQL');
+    } console.log('Conectado a la base de datos MySQL');
+});
+
+//  archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta para el home
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+// Rutas de las otras vistas
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'login.html'));
+});
+
+app.get('/ma-cuisine', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'ma-cuisine.html'));
+});
+
+app.get('/menu', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'menu.html'));
 });
 
 // Endpoint para obtener todos los usuarios
