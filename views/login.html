@@ -52,7 +52,7 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="ma-cuisine.html">Ma Cuisine</a>
@@ -66,145 +66,118 @@
               <li class="nav-item">
                 <a class="nav-link" href="login.html">Registro/Ingreso</a>
               </li>
+              <li class="nav-item" id="usuarios-link" style="display: none;">
+                <a class="nav-link" href="/usuarios.html">Usuarios</a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
     <div class="d-flex justify-content-center px-5">
-      <div class="contact-page px-3">
-        <div>
-          <div>
-            <h2 class="text-center">CONTACTÁNOS</h2>
+      <div id="contenedor-login" class="ingreso">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">Bienvenido</div>
+            <form id="loginform">
+              <input
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
+                required
+              />
+
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
+              />
+
+              <button type="submit" title="Ingresar" name="Ingresar">
+                Ingresar
+              </button>
+            </form>
+            <div class="pie-form">
+              <a href="#">¿Perdiste tu contraseña?</a>
+              <a id="registrate">¿No tienes Cuenta? Registrate</a>
+              <a id="eliminarUsuario">Eliminar usuario</a>
+            </div>
           </div>
-          <p class="form-txt">¡Escribinos un mensaje y hace tu reserva!</p>
+          <div class="inferior">
+            <a href="login.html">Volver</a>
+          </div>
         </div>
-        <form class="row justify-content-center needs-validation" novalidate>
-          <div class="col-md-6 mb-3">
-            <input
-              type="text"
-              class="form-control custom-input"
-              placeholder="Nombre"
-              aria-label="Nombre"
-              id="validationDefault01"
-              required
-            />
-            <div class="invalid-feedback">Por favor ingrese su nombre.</div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <input
-              type="text"
-              class="form-control custom-input"
-              placeholder="Apellido"
-              aria-label="Apellido"
-              required
-            />
-            <div class="invalid-feedback">Por favor ingrese su apellido.</div>
-          </div>
-          <div class="col-md-12 mb-3">
-            <input
-              type="email"
-              class="form-control custom-input"
-              placeholder="email"
-              aria-label="email"
-              required
-            />
-            <div class="invalid-feedback">
-              Por favor ingrese un correo electrónico válido.
-            </div>
-          </div>
-          <div class="check-radio">
-            <div class="form-check">
+      </div>
+      <div id="contenedor-login" class="registro hidden">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">Registro</div>
+            <form id="loginform">
               <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
                 required
               />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Soy cliente habitual
-              </label>
-            </div>
-            <div class="form-check">
+
               <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
+                type="email"
+                placeholder="Correo electronico"
+                name="email"
                 required
-                checked
               />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Es la primera vez que vengo
-              </label>
-              <div class="invalid-feedback">
-                Por favor seleccione una opción.
-              </div>
-            </div>
-          </div>
-          <div class="container-form-check">
-            <div class="form-check">
+
               <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
               />
-              <label class="form-check-label" for="flexCheckDefault">
-                Quiero suscribirme al Newsletter
-              </label>
-            </div>
-            <div class="form-check">
+
+              <button type="submit" title="Registrar" name="Registrar">
+                Registrar
+              </button>
+            </form>
+          </div>
+          <div class="inferior">
+            <a id="volverLogin">Volver</a>
+          </div>
+        </div>
+      </div>
+      <div id="contenedor-login" class="borrar-cuenta hidden">
+        <div id="central">
+          <div id="login">
+            <div class="titulo">Eliminar cuenta</div>
+            <form id="loginform">
               <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-                checked
+                type="text"
+                name="usuario"
+                placeholder="Usuario"
+                required
               />
-              <label class="form-check-label" for="flexCheckChecked">
-                Quiero recibir noticias sobre talleres
-              </label>
-            </div>
-            <div class="form-check">
+
               <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault2"
+                type="email"
+                placeholder="Correo electronico"
+                name="email"
+                required
               />
-              <label class="form-check-label" for="flexCheckDefault2">
-                Quiero recibir promociones
-              </label>
-            </div>
+
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                required
+              />
+
+              <button type="submit" title="borrar" name="borrar">Borrar</button>
+            </form>
           </div>
-          <div class="col-md-12 mb-3">
-            <label for="validationTextarea" class="form-label">Textarea</label>
-            <textarea
-              class="form-control"
-              id="validationTextarea"
-              placeholder="Escriba su mensaje aquí"
-              required
-            ></textarea>
-            <div class="invalid-feedback">
-              Por favor ingrese un mensaje en el textarea.
-            </div>
+          <div class="inferior">
+            <a id="volverLoginEliminar">Volver</a>
           </div>
-          <div>
-            <p class="recordatorio-text-area"></p>
-          </div>
-          <div class="col-md-12 mb-3 button">
-            <button
-              type="submit"
-              class="btn btn-info active"
-              id="botoncito"
-              aria-pressed="true"
-            >
-              ENVIAR
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
 
@@ -242,6 +215,35 @@
         </div>
       </nav>
     </footer>
+    <script>
+      document
+        .getElementById("registrate")
+        .addEventListener("click", function () {
+          document.querySelector(".ingreso").classList.add("hidden");
+          document.querySelector(".registro").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("eliminarUsuario")
+        .addEventListener("click", function () {
+          document.querySelector(".ingreso").classList.add("hidden");
+          document.querySelector(".borrar-cuenta").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("volverLogin")
+        .addEventListener("click", function () {
+          document.querySelector(".registro").classList.add("hidden");
+          document.querySelector(".ingreso").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("volverLoginEliminar")
+        .addEventListener("click", function () {
+          document.querySelector(".borrar-cuenta").classList.add("hidden");
+          document.querySelector(".ingreso").classList.remove("hidden");
+        });
+    </script>
     <script>
       // JavaScript para activar las validaciones
       (function () {

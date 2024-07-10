@@ -4,14 +4,7 @@
 Front para proyecto CAC 2024
 
 
-Equipo 
-(orden alfabético por apellido)
-
--Antonini, Carla
--Rancor, Gonzalo
-
-
-Deploy:
+deploy:
 https://main--macuisinefrance.netlify.app/
 
 Backend conectado a la base de datos de server cloud en rama: https://github.com/Gaghyta/CAC-2024-NODE/tree/backend-sitio
