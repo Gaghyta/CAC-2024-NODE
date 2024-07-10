@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const mysql = require('mysql2/promise');
 const { createPool } = require('mysql2/promise');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 //const fetch = require('node-fetch');
 require('dotenv').config(); // Para cargar las variables de entorno desde .env
 
@@ -58,7 +60,8 @@ const pool = createPool({
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // Ruta para el home
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
@@ -191,6 +194,33 @@ app.get('/usuarios.html', async (req, res) => {
     console.error('Error en la consulta:', error);
 });
  */
+
+app.post('/register', async (req, res) => {
+    const { username, email, password } = req.body;
+  
+    // Validar los datos de entrada
+    if (!username || !email || !password) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+  
+    try {
+      // Hash de la contraseña
+      const hashedPassword = await bcrypt.hash(password, 10);
+  
+      // Inserción en la base de datos en la tabla 'registro_usuarios'
+      const query = 'INSERT INTO registro_usuarios (username, email, password) VALUES (?, ?, ?)';
+      connection.query(query, [username, email, hashedPassword], (err, results) => {
+        if (err) {
+          console.error('Error inserting into the database:', err);
+          return res.status(500).json({ message: 'Server error' });
+        }
+        res.status(201).json({ message: 'User registered successfully' });
+      });
+    } catch (error) {
+      console.error('Error during registration:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
 
 
 // Iniciar el servidor
