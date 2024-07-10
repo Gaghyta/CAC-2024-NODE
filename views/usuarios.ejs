@@ -9,6 +9,55 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-md">
+          <a class="navbar-brand" href="/">
+            <img src="/img/logo-france.png" alt="Logo" />
+            <!-- <span class="logo-france">Ma cuisine</span> -->
+          </a>
+  
+          <button
+            class="navbar-toggler hamburguesa"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+            <!--<span>☰</span>-->
+          </button>
+  
+          <div class="container-fluid">
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/ma-cuisine.html">Ma Cuisine</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login.html">Registro/Ingreso</a>
+                </li>
+                <li class="nav-item" id="usuarios-link" style="display: none;">
+                  <a class="nav-link" href="/usuarios.html">Usuarios</a>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
     <div class="container mt-4">
         <h1>Usuarios Registrados</h1>
         <table class="table">
@@ -30,6 +79,55 @@
             </tbody>
         </table>
     </div>
+    <footer class="">
+        <nav class="navbar navbar-expand-md">
+          <div class="container-fluid justify-content-center">
+            <ul class="d-flex justify-content-evenly nav">
+              <li class="nav-item footer">
+                <a class="nav-link" href="contacto.html">Contáctenos</a>
+              </li>
+              <li class="nav-item footer">
+                <a class="nav-link" href="index.html">MA CUISINE Prensa</a>
+              </li>
+              <li class="nav-item footer">
+                <a class="nav-link footer" href="index.html">Diseño por CAnton</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link footer" href="index.html"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link footer" href="index.html"
+                  >Políticas de privacidad</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buy-tickets.html"
+                  >E-mail:contact@macuisine.com</a
+                >
+              </li>
+            </ul>
+            <!-- <div class="collapse navbar-collapse justify-content-end">
+                  </div>-->
+          </div>
+        </nav>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        // Aquí se simula el usuario autenticado con su rol
+        const user = {
+            isAdmin: true // Cambia esto según el rol del usuario
+        };
+  
+        // Verificar si el usuario es administrador y mostrar el enlace de Usuarios
+        if (user && user.isAdmin) {
+            const usuariosLink = document.getElementById('usuarios-link');
+            if (usuariosLink) {
+                usuariosLink.style.display = 'block'; // Mostrar el enlace
+            }
+        }
+    </script>
     <!-- Agrega jQuery para facilitar las solicitudes AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
