@@ -422,9 +422,8 @@ a.nav-link:hover {
   color: rgb(163, 111, 111);
 }
 
-#loginform input[type="text"],
-#loginform input[type="email"],
-#loginform input[type="password"] {
+#login-form input[type="text"],
+#login-form input[type="password"] {
   width: 100%;
   padding: 1em;
   margin: 1.25em 0;
@@ -432,7 +431,21 @@ a.nav-link:hover {
   border-radius: 4px;
 }
 
-#loginform button {
+#delete-account input[type="text"],
+#delete-account input[type="email"],
+#delete-account input[type="password"],
+#registro-form input[type="text"],
+#registro-form input[type="email"],
+#registro-form input[type="password"] {
+  width: 100%;
+  padding: 1em;
+  margin: 1.25em 0;
+  border: 1px solid #daced5;
+  border-radius: 4px;
+}
+
+#delete-account button,
+#registro-form button {
   width: 100%;
   padding: 1em;
   margin: 10px 0;
@@ -444,7 +457,19 @@ a.nav-link:hover {
   font-size: 16px;
 }
 
-#loginform button:hover {
+#login-form button {
+  width: 100%;
+  padding: 1em;
+  margin: 10px 0;
+  background-color: #cda0b4;
+  color: rgb(30, 31, 27);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#login-form button:hover {
   background-color: #e6edd3;
 }
 

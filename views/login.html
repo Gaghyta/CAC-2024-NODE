@@ -74,14 +74,16 @@
         </div>
       </nav>
     </header>
+
     <div class="d-flex justify-content-center px-5">
       <div id="contenedor-login" class="ingreso">
         <div id="central">
           <div id="login">
             <div class="titulo">Bienvenido</div>
-            <form id="loginform">
+            <form id="login-form" action="/login" method="POST">
               <input
                 type="text"
+                id="usuario-login"
                 name="usuario"
                 placeholder="Usuario"
                 required
@@ -89,6 +91,7 @@
 
               <input
                 type="password"
+                id="password-login"
                 placeholder="Contraseña"
                 name="password"
                 required
@@ -101,7 +104,7 @@
             <div class="pie-form">
               <a href="#">¿Perdiste tu contraseña?</a>
               <a id="registrate">¿No tienes Cuenta? Registrate</a>
-              <a id="eliminarUsuario">Eliminar usuario</a>
+              <a id="eliminarUsuario">Eliminar cuenta</a>
             </div>
           </div>
           <div class="inferior">
@@ -113,9 +116,10 @@
         <div id="central">
           <div id="login">
             <div class="titulo">Registro</div>
-            <form id="loginform">
+            <form id="registro-form" action="/register" method="POST">
               <input
                 type="text"
+                id="usuario-registro"
                 name="usuario"
                 placeholder="Usuario"
                 required
@@ -123,6 +127,7 @@
 
               <input
                 type="email"
+                id="email-registro"
                 placeholder="Correo electronico"
                 name="email"
                 required
@@ -130,6 +135,7 @@
 
               <input
                 type="password"
+                id="password-registro"
                 placeholder="Contraseña"
                 name="password"
                 required
@@ -149,9 +155,10 @@
         <div id="central">
           <div id="login">
             <div class="titulo">Eliminar cuenta</div>
-            <form id="loginform">
+            <form id="delete-account">
               <input
                 type="text"
+                id="usuario-delete"
                 name="usuario"
                 placeholder="Usuario"
                 required
@@ -159,6 +166,7 @@
 
               <input
                 type="email"
+                id="email-delete"
                 placeholder="Correo electronico"
                 name="email"
                 required
@@ -166,12 +174,13 @@
 
               <input
                 type="password"
+                id="password-delete"
                 placeholder="Contraseña"
                 name="password"
                 required
               />
 
-              <button type="submit" title="borrar" name="borrar">Borrar</button>
+              <button type="submit" title="borrar" name="borrar">Eliminar cuenta</button>
             </form>
           </div>
           <div class="inferior">

@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".menu-card");
 
@@ -47,7 +48,142 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.getElementById('registro-form').addEventListener('submit', async function(event) {
+  event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+
+  // Obtener datos del formulario
+  const formData = new FormData(this);
+  // Mostrar datos del formulario en consola (opcional para depuración)
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+
+  // Enviar solicitud POST al servidor
+  try {
+      const response = await fetch('/register', {
+          method: 'POST',
+          body: formData
+      });
+
+      if (!response.ok) {
+          throw new Error('Error al registrar usuario');
+      }
+
+      // Manejar la respuesta del servidor (opcional)
+      const data = await response.json();
+      console.log('Respuesta del servidor:', data); // Mostrar respuesta del servidor en consola
+      alert(data.message); // Mostrar mensaje de éxito
+
+      // Opcional: cerrar el modal de registro
+      document.getElementById('registro-form').style.display = 'none';
+  } catch (error) {
+      console.error('Error en el registro:', error);
+      alert('Hubo un problema al registrar el usuario');
+  }
+});
+
+// Cambio la URL al hacer clic en 'Regístrate'
+document.getElementById("registrate").addEventListener("click", function () {
+  // Cambiar la URL en la barra de direcciones
+  history.pushState({}, "", "/register");
+
+  // Mostrar el modal de registro
+  document.querySelector(".ingreso").classList.add("hidden");
+  document.querySelector(".registro").classList.remove("hidden");
+});
+// Cambiar la URL al hacer clic en 'Ingresar'
+
+document.getElementById("ingresar").addEventListener("click", function () {
+    // Cambiar la URL en la barra de direcciones
+    history.pushState({}, "", "/login");
+
+    // Mostrar el modal de ingreso
+    document.querySelector(".registro").classList.add("hidden");
+    document.querySelector(".ingreso").classList.remove("hidden");
+  });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const modalEliminarCuenta = document.getElementById("modalEliminarCuenta");
+  const formEliminarCuenta = document.getElementById("formEliminarCuenta");
+
+  // Evento para abrir el modal
+  document.getElementById("abrirModalEliminar").addEventListener("click", function() {
+    modalEliminarCuenta.style.display = "block";
+  });
+
+  // Evento para cerrar el modal
+  document.querySelector(".close").addEventListener("click", function() {
+    modalEliminarCuenta.style.display = "none";
+  });
+
+  // Evento para enviar la solicitud DELETE al servidor
+  document.addEventListener("DOMContentLoaded", function() {
+    const modalEliminarCuenta = document.getElementById("modalEliminarCuenta");
+  
+    // Evento para abrir el modal
+    document.getElementById("abrirModalEliminar").addEventListener("click", function() {
+      modalEliminarCuenta.style.display = "block";
+    });
+  
+    // Evento para cerrar el modal
+    document.querySelector(".close").addEventListener("click", function() {
+      modalEliminarCuenta.style.display = "none";
+    });
+  
+    // Evento para enviar la solicitud DELETE al servidor
+    document.getElementById("delete-account").addEventListener("submit", async function(event) {
+      event.preventDefault();
+  
+      try {
+        const response = await fetch('/delete-account', {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: 'username',  // reemplaza con el nombre de usuario correcto
+            email: 'email',        // reemplaza con el correo electrónico correcto
+            password: 'password'   // reemplaza con la contraseña correcta
+          })
+        });
+  
+        if (!response.ok) {
+          throw new Error('Error al eliminar cuenta');
+        }
+  
+        const data = await response.json();
+        alert(data.message); // Mostrar mensaje de éxito
+  
+        // Cerrar el modal después de eliminar la cuenta
+        modalEliminarCuenta.style.display = "none";
+      } catch (error) {
+        console.error('Error al eliminar cuenta:', error);
+        alert('Hubo un problema al eliminar la cuenta');
+      }
+    });
+  });
+});
+
+(function () {
+  "use strict";
+  var forms = document.querySelectorAll(".needs-validation");
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
+
+/* document.addEventListener("DOMContentLoaded", () => {
   // Recuperar los datos del localStorage al cargar la página
   document.getElementById("validationDefault01").value =
     localStorage.getItem("nombre") || "";
@@ -109,5 +245,5 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     alert("Datos guardados en el almacenamiento local");
-  });
-});
+  }); 
+}); */
