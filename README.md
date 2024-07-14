@@ -4,7 +4,10 @@
 Front para proyecto CAC 2024
 
 
-deploy:
+deploy con back:
+https://ma-cuisine-1b0b653444f3.herokuapp.com/
+
+primer deploy front:
 https://main--macuisinefrance.netlify.app/
 
 Backend conectado a la base de datos de server cloud en rama: https://github.com/Gaghyta/CAC-2024-NODE/tree/backend-sitio
