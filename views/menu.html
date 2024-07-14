@@ -4,18 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma Cuisine Resto</title>
-    <link
-      rel="shortcut icon"
-      href="./img/logo-france.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/img/logo-france.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/css/bootstrap.min.css"
@@ -23,20 +18,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="/">
-          <img src="img/logo-france.png" alt="Logo" />
+          <img src="/img/logo-france.png" alt="Logo" />
           <!-- <span class="logo-france">Ma cuisine</span> -->
         </a>
-
         <button
           class="navbar-toggler hamburguesa"
           type="button"
@@ -49,7 +41,6 @@
           <span class="navbar-toggler-icon"></span>
           <!--<span>☰</span>-->
         </button>
-
         <div class="container-fluid">
           <div
             class="collapse navbar-collapse justify-content-end"
@@ -60,26 +51,28 @@
                 <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/ma-cuisine.html">Ma Cuisine</a>
+                <a class="nav-link" href="/ma-cuisine">Ma Cuisine</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/menu.html">Menu</a>
+                <a class="nav-link" href="/menu">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contacto.html">Contacto</a>
+                <a class="nav-link" href="/contacto">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/login.html">Registro/Ingreso</a>
+                <a class="nav-link" href="/login">Registro/Ingreso</a>
               </li>
-              <li class="nav-item" id="usuarios-link" style="display: none;">
-                <a class="nav-link" href="/usuarios.html">Usuarios</a>
+              <li class="nav-item" id="reservas-link" style="display: none;">
+                <a class="nav-link" href="/reservas">Reservas</a>
+              </li>
+              <li class="nav-item" id="clientes-link" style="display: none;">
+                <a class="nav-link" href="/clientes">Clientes</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-
     <main>
       <div class="container">
         <div class="row">
@@ -186,52 +179,54 @@
               </div>
             </div>
           </div>
-
-          <!-- Agrega más tarjetas de menú según sea necesario -->
         </div>
       </div>
     </main>
 
     <footer>
-      <footer class="">
-        <nav class="navbar navbar-expand-md">
-          <div class="container-fluid justify-content-center">
-            <ul class="d-flex justify-content-evenly nav">
-              <li class="nav-item footer">
-                <a class="nav-link" href="contacto.html">Contáctenos</a>
-              </li>
-              <li class="nav-item footer">
-                <a class="nav-link" href="/">MA CUISINE Prensa</a>
-              </li>
-              <li class="nav-item footer">
-                <a class="nav-link footer" href="/"
-                  >Diseño por CAnton</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link footer" href="/"
-                  >Términos y condiciones</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link footer" href="/"
-                  >Políticas de privacidad</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/"
-                  >E-mail:contact@macuisine.com</a
-                >
-              </li>
-            </ul>
-            <!-- <div class="collapse navbar-collapse justify-content-end">
-                    </div>-->
-          </div>
-        </nav>
-      </footer>
-      <script src="./js/main.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-      <!-- Agrega contenido del pie de página si es necesario -->
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid justify-content-center">
+          <ul class="d-flex justify-content-evenly nav">
+            <li class="nav-item footer">
+              <a class="nav-link" href="/contacto">Contáctenos</a>
+            </li>
+            <li class="nav-item footer">
+              <a class="nav-link" href="/">MA CUISINE Prensa</a>
+            </li>
+            <li class="nav-item footer">
+              <a class="nav-link footer" href="/">Diseño por CAnton</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link footer" href="/">Términos y condiciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link footer" href="/">Políticas de privacidad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">E-mail:contact@macuisine.com</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </footer>
+    <script src="/js/main.js"></script>
+    <script>
+      const user = {
+        isAdmin: true // Cambia esto según el rol del usuario
+      };
+
+      // Verificar si el usuario es administrador y mostrar los enlaces de Usuarios y Clientes
+      if (user && user.isAdmin) {
+        const reservasLink = document.getElementById('reservas-link');
+        const clientesLink = document.getElementById('clientes-link');
+        if (reservasLink) {
+          reservasLink.style.display = 'block'; // Mostrar el enlace de Usuarios
+        }
+        if (clientesLink) {
+          clientesLink.style.display = 'block'; // Mostrar el enlace de Clientes
+        }
+      }
+    </script>
+
   </body>
 </html>
