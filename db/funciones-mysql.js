@@ -75,6 +75,7 @@ async function updateRecord(table, data, conditions) {
 
     try {
         const result = await executeQuery(query, params);
+        console.log('Resultado de la ejecución de la consulta:', result); 
         return result;
     } catch (error) {
         throw error;

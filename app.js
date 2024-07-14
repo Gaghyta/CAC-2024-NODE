@@ -22,9 +22,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // RUTAS
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite cualquier origen
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 app.use('/', frontendRouter);
 app.use('/api/clientes',routerClientes);
 app.use('/api/reservas', routerReservas);
+
 
 app.listen(config.app.port, () => {
     console.log(`Servidor corriendo en http://localhost:${config.app.port}`);
