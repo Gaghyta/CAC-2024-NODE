@@ -46,8 +46,6 @@ header nav.navbar ul.navbar-nav li.nav-item {
 }
 .oscurecer-imagen {
   filter: brightness(0.5);
-  /*filter: opacity(0.5);*/
-  /*linear-gradient(rgba(0, 0, 0, 0.5));*/
 }
 .carousel-inner {
   height: 70%;
@@ -104,6 +102,7 @@ p {
   color: #303321;
   padding: 8px;
 }
+
 #conocermas {
   padding: 2px 2px;
 }
@@ -186,6 +185,8 @@ u {
   text-decoration-style: dotted;
   text-underline-offset: 0.3em;
 }
+
+/* ***** FOOTER *********** */
 footer {
   margin-top: 3em;
   min-height: 5em;
@@ -198,6 +199,7 @@ a.nav-link {
 a.nav-link:hover {
   color: #e5e2b7;
 }
+
 /* ************************* MA-CUISINE ******************************** */
 /* Estilos para las imágenes 
 .imagen-espacio-ma-cuisine {
@@ -345,6 +347,16 @@ a.nav-link:hover {
   }
 }
 /* Estilos para el modal */
+
+#login {
+  margin-top: 3em;
+  padding: 3em;
+  background-color: #1a1b1b;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(66, 52, 33, 0.2);
+}
+
+
 .modal {
   display: none;
   position: fixed;
@@ -398,8 +410,18 @@ a.nav-link:hover {
   transform: translateY(0);
 }
 
-/* ************************** SECCION LOGIN **************************  */
+/* Estilos adicionales para manejar los nuevos IDs de los modales */
 
+/* ********** MODALES *********** */
+/* Estilos específicos de los modales */
+
+/* Estilos adicionales para manejar los nuevos IDs de los modales */
+#contenedor-registro,
+#contenedor-borrar-cuenta {
+  display: none;
+}
+
+/* Estilos específicos de los modales */
 #login {
   margin-top: 3em;
   padding: 3em;
@@ -422,17 +444,25 @@ a.nav-link:hover {
   color: rgb(163, 111, 111);
 }
 
-#loginform input[type="text"],
-#loginform input[type="email"],
-#loginform input[type="password"] {
+#login-form input[type="text"],
+#login-form input[type="password"],
+#delete-account input[type="text"],
+#delete-account input[type="email"],
+#delete-account input[type="password"],
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
   width: 100%;
   padding: 1em;
   margin: 1.25em 0;
   border: 1px solid #daced5;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
-#loginform button {
+/* Estilos para los botones */
+#login-form button,
+#register-form button,
+#delete-account button {
   width: 100%;
   padding: 1em;
   margin: 10px 0;
@@ -444,7 +474,141 @@ a.nav-link:hover {
   font-size: 16px;
 }
 
-#loginform button:hover {
+/* Estilos para los enlaces dentro de los modales */
+#login-form a,
+#register-form a,
+#delete-account a {
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  color: #cda0b4;
+  text-decoration: none;
+}
+
+/* Estilos para los textos adicionales dentro de los modales */
+#login-form p,
+#register-form p,
+#delete-account p {
+  text-align: center;
+  margin-top: 1em;
+  color: #cda0b4;
+}
+#delete-account button:hover,
+#register-form button:hover,
+#login-form button:hover {
+  background-color: #e6edd3;
+}
+
+#registrate-link-delete-account .pie-form, 
+#registrate-link-register-form .pie-form, 
+#registrate-link-login-form .pie-form {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#registrate-link-delete-account .pie-form a, 
+#registrate-link-register-form .pie-form a, 
+#registrate-link-login-form .pie-form a {
+  color: #cda0b4;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+#registrate-link-delete-account .pie-form a:hover, 
+#registrate-link-register-form .pie-form a:hover, 
+#registrate-link-login-form a:hover {
+  text-decoration: underline;
+}
+
+#volver-login-eliminar-en-delete-account .inferior,
+#volver-login-eliminar-en-register-form .inferior ,
+#volver-login-eliminar-login-form .inferior {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilos adicionales para los enlaces de regresar */
+.inferior a {
+  display: block;
+  margin-top: 1em;
+  text-align: center;
+  color: #cda0b4;
+}
+
+.inferior a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+} 
+
+#eliminarUsuario {
+  color: #cda0b4;
+  cursor: pointer;
+}
+#registrate {
+  color: #cda0b4;
+  cursor: pointer;
+}
+#volverLogin 
+#volverLoginEliminar {
+  color: #cda0b4;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+/* #login-form input[type="text"],
+#login-form input[type="password"] {
+  width: 100%;
+  padding: 1em;
+  margin: 1.25em 0;
+  border: 1px solid #daced5;
+  border-radius: 4px;
+}
+
+#delete-account input[type="text"],
+#delete-account input[type="email"],
+#delete-account input[type="password"],
+#registro-form input[type="text"],
+#registro-form input[type="email"],
+#registro-form input[type="password"] {
+  width: 100%;
+  padding: 1em;
+  margin: 1.25em 0;
+  border: 1px solid #daced5;
+  border-radius: 4px;
+}
+
+#delete-account button,
+#registro-form button {
+  width: 100%;
+  padding: 1em;
+  margin: 10px 0;
+  background-color: #cda0b4;
+  color: rgb(30, 31, 27);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#login-form button {
+  width: 100%;
+  padding: 1em;
+  margin: 10px 0;
+  background-color: #cda0b4;
+  color: rgb(30, 31, 27);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#login-form button:hover {
   background-color: #e6edd3;
 }
 
@@ -490,14 +654,11 @@ a.nav-link:hover {
   color: #cda0b4;
   cursor: pointer;
 }
-/* #volverLogin {
-  color: #cda0b4;
-  cursor: pointer;
-} */
+
 #volverLogin 
 #volverLoginEliminar {
   color: #cda0b4;
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 2.5px;
-}
+} */

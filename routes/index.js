@@ -1,37 +1,100 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+//const app = require('../app');
+const config = require('../config');
 const router = express.Router();
-const pool = require('../db/connection');
+const apiUrl = process.env.API_URL || 'http://localhost:3000';
+const reservasController = require('../modulos/reservas/controlador-reservas');
+const clientesController = require('../modulos/clientes/controlador-clientes');
 
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(bodyParser.json());
 
-// Ruta para el home
+// **************  APP GET VIEWS **************
+ 
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  //res.sendFile(path.join(__dirname, '../views', 'index.html'));
+  res.sendFile(path.join(__dirname, '../views/index.html'));
+});
+/*router.get('/', (req, res) => {
+  res.redirect('/home');
+});*/
+
+router.get('/ma-cuisine', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/ma-cuisine.html'));
 });
 
-// Rutas de las otras vistas
-router.get('/login.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views', 'login.html'));
+router.get('/menu', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/menu.html'));
+}); 
+
+
+router.get('/contacto', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/contacto.html'));
 });
 
-router.get('/ma-cuisine.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views', 'ma-cuisine.html'));
+router.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
-router.get('/menu.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views', 'menu.html'));
-});
 
-router.get('/contacto.html', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views', 'contacto.html'));
-});
+router.get('/clientes', async (req, res) => {
+  try {
+    const clientes = await clientesController.obtenerClientes();
+    //res.render('clientes', { cliente: clientes }); // esta no funciono Renderiza la vista 'clientes.ejs'
+    res.render('clientes', { clientes });
+  } catch (error) {
+    console.error('Error al obtener clientes:', error);
+    res.status(500).json({ error: 'Error en la base de datos' });
+  }
+}); 
 
+// rou
+
+router.get('/reservas', async (req, res) => {
+  try {
+    const reservas = await reservasController.obtenerReservas();
+    res.render('reservas', { reservas: reservas }); // Renderiza la vista 'reserva.ejs'
+  } catch (error) {
+    console.error('Error al obtener reservas:', error);
+    res.status(500).json({ error: 'Error en la base de datos' });
+  }
+}); 
+
+// router.get('/reservas', reservaController.obtenerReservasConUsuarios);
+
+/* 
+router.get('/reservas', async (req, res) => {
+  try {
+    const response = await fetch(`${apiUrl}/api/reservas`);
+    if (!response.ok) {
+      throw new Error('Error al obtener las reservas');
+    }
+    const reservas = await response.json();
+    res.render('reservas', { reservas }); // Pasar reservas como un objeto al renderizar la vista
+  } catch (error) {
+    console.error('Error al obtener reservas:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+}); */
+
+//router.get('/api/reservas', reservaController.obtenerReservasConUsuarios);
+/* router.post('/api/reservas', reservaController.agregarReserva);
+router.put('/api/reservas/:id', reservaController.actualizarReservaPorId);
+router.delete('/api/reservas/:id', reservaController.eliminarReservaPorId); */
+
+/* router.get('/clientes', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/clientes.html'));
+});*/
+
+
+module.exports = router
+/* 
+const bcrypt = require('bcrypt');
+/* 
+
+
+// OBTENER USUARIOS
 // Ruta para obtener usuarios desde la base de datos
-async function obtenerUsuarios() {
+/* async function obtenerUsuarios() {
   const connection = await pool.getConnection();
   try {
     const [rows, fields] = await connection.query('SELECT * FROM usuarios');
@@ -52,51 +115,6 @@ router.get('/usuarios.html', async (req, res) => {
     console.error('Error al obtener usuarios:', error);
     res.status(500).json({ error: 'Error en la base de datos' });
   }
-});
+}); */
 
-// Ruta para registrar un usuario
-router.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
 
-  // Validar los datos de entrada
-  if (!username || !email || !password) {
-    return res.status(400).json({ message: 'All fields are required' });
-  }
-
-  try {
-    // Hash de la contraseña
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Inserción en la base de datos en la tabla 'registro_usuarios'
-    const query = 'INSERT INTO registro_usuarios (username, email, password) VALUES (?, ?, ?)';
-    const [result] = await pool.query(query, [username, email, hashedPassword]);
-
-    res.status(201).json({ message: 'Usuario registrado exitosamente' });
-  } catch (error) {
-    console.error('Error durante el registro:', error);
-    res.status(500).json({ message: 'Error en el servidor' });
-  }
-});
-
-// Ruta para eliminar una cuenta de usuario
-router.post('/delete-account', async (req, res) => {
-  const { username, email, password } = req.body;
-
-  // Define la consulta SQL para eliminar el usuario
-  const query = 'DELETE FROM registro_usuarios WHERE username = ? AND email = ? AND password = ?';
-
-  try {
-    const [result] = await pool.query(query, [username, email, password]);
-
-    if (result.affectedRows === 0) {
-      res.status(404).json({ message: 'Usuario no encontrado o datos incorrectos' });
-    } else {
-      res.status(200).json({ message: 'Cuenta eliminada exitosamente' });
-    }
-  } catch (error) {
-    console.error('Error al eliminar cuenta:', error);
-    res.status(500).json({ message: 'Error al eliminar cuenta' });
-  }
-});
-
-module.exports = router;
