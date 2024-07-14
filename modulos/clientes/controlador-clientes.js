@@ -59,6 +59,9 @@ async function obtenerClientePorId(id) {
 async function eliminarClientePorId(id) {
     try {
         const resultado = await db.deleteRecord(TABLA, { id: id });
+        if (resultado === 0) {
+            return null; // Devuelve null si ningún registro fue eliminado
+        }
         return resultado;
     } catch (error) {
         console.error('Error al eliminar cliente por ID:', error);

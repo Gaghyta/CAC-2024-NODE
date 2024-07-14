@@ -35,6 +35,17 @@ router.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
+/* 
+router.get('/clientes', async (req, res) => {
+  try {
+    const clientes = await clientesController.obtenerClientes();
+    //res.render('clientes', { cliente: clientes }); // esta no funciono Renderiza la vista 'clientes.ejs'
+    res.render('clientes', { clientes });
+  } catch (error) {
+    console.error('Error al obtener clientes:', error);
+    res.status(500).json({ error: 'Error en la base de datos' });
+  }
+});  */
 
 router.get('/clientes', async (req, res) => {
   try {
@@ -47,7 +58,18 @@ router.get('/clientes', async (req, res) => {
   }
 }); 
 
-// rou
+router.get('/api/clientes', async (req, res) => {
+  try {
+    const clientes = await clientesController.obtenerClientes(); // Suponiendo que tienes una función asíncrona para obtener clientes
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Permite cualquier origen, ajusta según tus necesidades de seguridad
+    res.status(200).json(clientes); // Envía la respuesta JSON con los clientes obtenidos
+  } catch (error) {
+    console.error('Error al obtener clientes:', error);
+    res.status(500).json({ error: 'Error en el servidor' });
+  }
+});
+
 
 router.get('/reservas', async (req, res) => {
   try {
@@ -58,6 +80,20 @@ router.get('/reservas', async (req, res) => {
     res.status(500).json({ error: 'Error en la base de datos' });
   }
 }); 
+
+router.get('/api/reservas', async (req, res) => {
+  try {
+    const clientes = await reservasController.obtenerReservas(); // Suponiendo que tienes una función asíncrona para obtener clientes
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Permite cualquier origen, ajusta según tus necesidades de seguridad
+    res.status(200).json(clientes); // Envía la respuesta JSON con los clientes obtenidos
+  } catch (error) {
+    console.error('Error al obtener clientes:', error);
+    res.status(500).json({ error: 'Error en el servidor' });
+  }
+});
+
+
 
 // router.get('/reservas', reservaController.obtenerReservasConUsuarios);
 
