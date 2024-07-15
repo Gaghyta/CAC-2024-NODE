@@ -2,11 +2,6 @@ const db = require ('../../db/funciones-mysql')
 const respuesta = require('../../red/respuestas');
 const TABLA = 'clientes';
 
-/* function getRecords (){
-    return db.getRecords(TABLA)
-} */
-      
-
 async function obtenerClientes(req, res) {
     try {
         const records = await db.getRecords(TABLA);
@@ -20,12 +15,11 @@ async function obtenerClientes(req, res) {
     }
 }  
 
-
-async function agregarCliente(req, res) {
+async function agregarCliente(req,res) {
     const data = req.body; // Datos del cliente a agregar
     console.log('Datos recibidos:', data);
     try {
-        const resultado = await db.addRecord('clientes', data); // Llamar a la función de inserción en la base de datos
+        const resultado = await db.addRecord(TABLA,data); // Llamar a la función de inserción en la base de datos
         respuesta.success(req, res, 'Cliente agregado correctamente', 201);
     } catch (error) {
         console.error('Error al agregar cliente:', error);

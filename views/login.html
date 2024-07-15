@@ -52,7 +52,7 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ma-cuisine.html">Ma Cuisine</a>
+              <a class="nav-link" href="ma-cuisine">Ma Cuisine</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="menu">Menu</a>
@@ -80,7 +80,8 @@
       <div id="central">
         <div id="login">
           <div class="titulo">Bienvenido</div>
-          <form id="login-form" action="/login" method="POST">
+          <!-- <form id="login-form" action="./login" method="POST"> -->
+          <form id="login-form">
             <input
               type="text"
               id="usuario-login"
@@ -103,21 +104,21 @@
           </form>
           <div class="pie-form">
             <a href="#">¿Perdiste tu contraseña?</a>
-            <a id="registrate-link-login-form">¿No tienes Cuenta? Registrate</a>
-            <a id="eliminar-usuario-login-form">Eliminar cuenta</a>
+            <a id="registrate">¿No tienes Cuenta? Registrate</a>
+            <!-- <a id="eliminarUsuario">Eliminar cuenta</a> -->
           </div>
         </div>
         <div class="inferior">
-          <a href="login">Volver</a>
+          <a href="./login">Volver</a>
         </div>
       </div>
     </div>
-
-    <div id="contenedor-registro" class="registro hidden">
+    <div id="modal-registro" class="modal-registrar hidden">
       <div id="central">
-        <div id="login">
+        <div id="registro">
           <div class="titulo">Registro</div>
-          <form id="register-form" action="/register" method="POST">
+          <!-- <form id="register-form" action="./" method="POST"> -->
+          <form id="register-form">
             <input
               type="text"
               id="usuario-registro"
@@ -147,28 +148,31 @@
               required
             />
             <button type="submit">Registrar</button>
+
           </form>
           <div class="pie-form">
             <a href="#">¿Perdiste tu contraseña?</a>
-            <a id="registrate-register-form">¿No tienes Cuenta? Registrate</a>
-            <a id="eliminarUsuario-register-form">Eliminar usuario</a>
-        </div>
+            <a id="registrate-register-form">Inicia sesión</a>
+            <!-- <a id="eliminarUsuario-register-form">Eliminar cuenta</a> -->
+          </div>
+      </div>
+          
         </div>
         <div class="inferior">
-          <a id="volver-login-eliminar-en-register-form">Volver</a>
+          <a href="./login" id="volver-login-eliminar-en-register-form">Volver</a>
         </div>
       </div>
     </div>
 
-    <div id="contenedor-borrar-cuenta" class="borrar-cuenta hidden">
+   <!--  <div id="modal-eliminar-cuenta" class="modal-cuenta hidden">
       <div id="central">
-        <div id="login">
+        <div id="eliminar">
           <div class="titulo">Eliminar cuenta</div>
-          <form id="delete-account">
+          <form id="delete-account" action="./" method="DELETE">
             <input
               type="text"
-              id="usuario-delete"
-              name="usuario"
+              id="input-delete"
+              name="usuario-delete"
               placeholder="Usuario"
               required
             />
@@ -183,24 +187,25 @@
               type="password"
               id="password-delete"
               placeholder="Contraseña"
-              name="password"
+              name="name-password"
               required
             />
             <button type="submit" title="borrar" name="borrar">
               Eliminar cuenta
             </button>
           </form>
-          <div class="pie-form">
-            <a href="#">¿Perdiste tu contraseña?</a>
-            <a id="registrate-delete-account">¿No tienes Cuenta? Registrate</a>
-            <a id="eliminarUsuario-delete-account">Eliminar usuario</a>
+            <div class="pie-form">
+              <a href="#">¿Perdiste tu contraseña?</a>
+            </div>
+          
         </div>
-        </div>
+
         <div class="inferior">
-          <a id="volver-login-eliminar-en-delete-account">Volver</a>
+          <a href="./register" id="volver-login-eliminar-en-delete-account">Volver</a>
         </div>
+
       </div>
-    </div>
+    </div> -->
   </div>
 
   <footer class="">

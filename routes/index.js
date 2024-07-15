@@ -49,7 +49,7 @@ router.get('/clientes', async (req, res) => {
 
 router.get('/api/clientes', async (req, res) => {
   try {
-    const clientes = await clientesController.obtenerClientes(); // Suponiendo que tienes una función asíncrona para obtener clientes
+    const clientes = await clientesController.obtenerClientes(); // async
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', '*'); // Permite cualquier origen, ajusta según tus necesidades de seguridad
     res.status(200).json(clientes); // Envía la respuesta JSON con los clientes obtenidos

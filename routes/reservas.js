@@ -36,7 +36,8 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.post('/', async (req, res) => {
+  router.post('/', reservaController.agregarReserva);
+/*   router.post('/', async (req, res) => {
     try {
       const nuevaReserva = await reservaController.agregarReserva(req.body);
       res.status(201).json(nuevaReserva);
@@ -44,7 +45,7 @@ router.get('/', async (req, res) => {
       console.error('Error al agregar reserva:', error);
       res.status(500).json({ error: 'Error en el servidor' });
     }
-  });
+  }); */
 
   router.put('/:id', reservaController.actualizarReservaPorId);
 

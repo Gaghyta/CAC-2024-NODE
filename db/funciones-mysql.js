@@ -5,15 +5,6 @@ const config = require('../config');
 const pool = require('./connection')
 
 
-/* async function query(sql, params) {
-    try {
-        const result = await pool.query(sql, params);
-        return result;
-    } catch (error) {
-        throw new Error(`Error en la consulta SQL: ${error.message}`);
-    }
-} */
-
 async function executeQuery(query, params) {
     const connection = await pool.getConnection(); // Obtener una conexión del pool
     try {
@@ -84,7 +75,6 @@ async function updateRecord(table, data, conditions) {
 
 
 module.exports = {
-    //query,
     getRecords,
     executeQuery,
     addRecord,

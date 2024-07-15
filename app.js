@@ -6,6 +6,7 @@ const frontendRouter = require('./routes/index'); // FRONTEND
 const routerClientes = require('./routes/clientes'); //BACKEND API
 //const routerClientes = require('./modulos/clientes/rutas'); //BACKEND API NO VA
 const routerReservas = require('./routes/reservas'); //BACKEND API
+/*const routerLogin = require('./routes/login'); //BACKEND API SIN DESARROLLO */
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 app.use('/', frontendRouter);
 app.use('/api/clientes',routerClientes);
 app.use('/api/reservas', routerReservas);
+// app.use('/login', routerLogin);
 
 
 app.listen(config.app.port, () => {
@@ -42,12 +44,9 @@ module.exports = {
     routerClientes,
     routerReservas,
     frontendRouter
+    /*routerLogin*/
+
 }
-
-/* const path = require('path');
-const bodyParser = require('body-parser'); */
-
-//const routes = require('./routes');
 
 
 
