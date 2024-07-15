@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "1cc52dd2-2238-4ba7-99b5-0695f6bb00c8",
+		"name": "CAC_NODE_2024-Completa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18775256"
+	},
+	"item": [
+		{
+			"name": "agregar-cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{     \n\"nombre\": \"Liam Gallagher\",\n\"edad\": 51,\n\"direccion\": \"calle Smith 23, Manchester\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todos-los-clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mostrar-cliente-por-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminacion-cliente-por-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/clientes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-cliente-por-id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Carla Antonini\",\n    \"edad\": 39,\n    \"direccion\": \"calle 9 2234\"         \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar-cliente Heroku",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{     \n\"nombre\": \"Noel Gallagher\",\n\"edad\": 51,\n\"direccion\": \"calle Smith 93, Londres\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/clientes",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todos-los-clientes-Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mostrar-cliente-por-id Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/clientes/1",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-cliente-por-id-Heroku",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Carla Gisele Antonini Goitre\",\n    \"edad\": 39,\n    \"direccion\": \"calle 9 2234\"         \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/clientes/1",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-cliente-por-id-Heroku",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Carla Gisele Antonini Goitre\",\n    \"edad\": 39,\n    \"direccion\": \"calle 9 2234\"         \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/clientes/2",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar-reserva",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 3,\n    \"fecha_reserva\": \"2024-07-10\",\n    \"cantidad_comensales\": 4,\n    \"estado\": \"Confirmada\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener-reservas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-reserva",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 3,\n    \"fecha_reserva\": \"2024-07-10\",\n    \"cantidad_comensales\": 5,\n    \"estado\": \"Pendiente\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-reserva-por-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/reservas/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar-reserva Heroku",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 3,\n    \"fecha_reserva\": \"2024-07-10\",\n    \"cantidad_comensales\": 4,\n    \"estado\": \"Confirmada\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener-reservas-Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/reservas",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener-reserva-por-id-Heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/reservas",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-reserva-por-id-Heroku",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_reservas\": 2,    \n    \"user_id\": 3,\n    \"fecha_reserva\": \"2024-07-16 T00:00:00.000Z\",\n    \"cantidad_comensales\": 6,\n    \"estado\": \"Confirmada\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ma-cuisine-1b0b653444f3.herokuapp.com/api/reservas/1",
+					"protocol": "https",
+					"host": [
+						"ma-cuisine-1b0b653444f3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"reservas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
