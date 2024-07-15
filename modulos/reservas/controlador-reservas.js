@@ -70,12 +70,26 @@ async function obtenerReservaPorId(id) {
 async function eliminarReservaPorId(id) {
     try {
         const resultado = await db.deleteRecord(TABLA, { id: id });
+        if (resultado === 0) {
+            return null; // Devuelve null si ningún registro fue eliminado
+        }
         return resultado;
     } catch (error) {
         console.error('Error al eliminar reserva por ID:', error);
         throw error;
     }
 }
+/* async function eliminarReservaPorId(id) {
+    try {
+        const resultado = await db.deleteRecord(TABLA, { id: id });
+        return resultado;
+    } catch (error) {
+        console.error('Error al eliminar reserva por ID:', error);
+        throw error;
+    }
+} */
+
+
 
 async function actualizarReservaPorId(req, res) {
     const { id } = req.params;

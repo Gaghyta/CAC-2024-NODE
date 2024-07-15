@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const reservaController = require('../modulos/reservas/controlador-reservas');
-
+const { error } = require('jquery');
 //router.get('/', reservaController.obtenerReservas);
 /* router.get('/', reservaController.obtenerReservas);
 router.get('/:id', reservaController.obtenerReservaPorId);
