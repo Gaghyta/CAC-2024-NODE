@@ -34,18 +34,6 @@ async function agregarCliente(req, res) {
 }
 
 
-
-/* async function obtenerClientes(req, res) {
-    try {
-        const clientes = await getRecords('clientes');
-        res.status(200).json(clientes);
-    } catch (error) {
-        console.error('Error al obtener clientes:', error);
-        res.status(500).json({ error: 'Error en la base de datos' });
-    }
-}
- */
-
 async function obtenerClientePorId(id) {
     try {
         const clientes = await db.getRecords(TABLA, { id: id });

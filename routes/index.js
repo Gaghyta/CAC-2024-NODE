@@ -35,17 +35,6 @@ router.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
-/* 
-router.get('/clientes', async (req, res) => {
-  try {
-    const clientes = await clientesController.obtenerClientes();
-    //res.render('clientes', { cliente: clientes }); // esta no funciono Renderiza la vista 'clientes.ejs'
-    res.render('clientes', { clientes });
-  } catch (error) {
-    console.error('Error al obtener clientes:', error);
-    res.status(500).json({ error: 'Error en la base de datos' });
-  }
-});  */
 
 router.get('/clientes', async (req, res) => {
   try {
