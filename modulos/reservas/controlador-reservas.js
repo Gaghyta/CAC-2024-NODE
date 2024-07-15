@@ -26,7 +26,62 @@ async function agregarReserva(req, res) {
         respuesta.error(req, res, 'Error al agregar reserva', 500);
     }
 }
+async function obtenerReservaPorId(id) {
+    try {
+        const reserva = await db.getRecords(TABLA, { id: id });
+        return reserva.length > 0 ? reserva[0] : null;
+    } catch (error) {
+        console.error('Error al obtener reserva por ID:', error);
+        throw error;
+    }
+}
 
+async function actualizarReservaPorId(req, res) {
+    const { id } = req.params;
+    const datosActualizados = req.body;
+
+    console.log('ID de la reserva:', id);
+    console.log('Datos actualizados:', datosActualizados);
+
+    try {
+        const resultado = await db.updateRecord(TABLA, datosActualizados, { id: id });
+        if (resultado.affectedRows > 0) {
+            respuesta.success(req, res, 'Reserva actualizada correctamente', 200);
+        } else {
+            respuesta.error(req, res, 'Reserva no encontrada', 404);
+        }
+    } catch (error) {
+        console.error('Error al actualizar reserva por ID:', error);
+        respuesta.error(req, res, 'Error al actualizar reserva', 500);
+        throw error;
+    }
+}
+
+async function eliminarReservaPorId(id) {
+    try {
+        const resultado = await db.deleteRecord(TABLA, { id:id });
+        return resultado.length > 0 ? reserva[0] : null;
+        /* if (resultado === 0) {
+            return "Ningun registro fue eliminado"; // Devuelve null si ningún registro fue eliminado
+        }
+        return resultado; */
+    } catch (error) {
+        console.error('Error al eliminar reserva por ID:', error);
+        throw error;
+    }
+} 
+
+
+
+module.exports = {
+    agregarReserva,
+    obtenerReservas,
+    //obtenerReservasConUsuarios,
+    obtenerReservaPorId,
+    actualizarReservaPorId,
+    eliminarReservaPorId
+   
+};
 
 
 /* async function obtenerReservas() {
@@ -57,28 +112,22 @@ async function agregarReserva(req, res) {
     }
 }
  */
-async function obtenerReservaPorId(id) {
-    try {
-        const reserva = await db.getRecords(TABLA, { id: id });
-        return reserva.length > 0 ? reserva[0] : null;
-    } catch (error) {
-        console.error('Error al obtener reserva por ID:', error);
-        throw error;
-    }
-}
 
-async function eliminarReservaPorId(id) {
+/* async function eliminarReservaPorId(id) {
     try {
-        const resultado = await db.deleteRecord(TABLA, { id: id });
-        if (resultado === 0) {
-            return null; // Devuelve null si ningún registro fue eliminado
-        }
-        return resultado;
+        const resultado = await db.deleteRecord(TABLA, { id:id });
+    
+    if (resultado === 0) {
+        return "Ningún registro fue eliminado"; // Devuelve un mensaje si ningún registro fue eliminado
+    }
+    
+        return `Se eliminó correctamente la reserva con ID ${id}`;
     } catch (error) {
         console.error('Error al eliminar reserva por ID:', error);
-        throw error;
+        throw error; // Lanza el error para ser manejado por el código que llama a esta función
     }
-}
+} */
+
 /* async function eliminarReservaPorId(id) {
     try {
         const resultado = await db.deleteRecord(TABLA, { id: id });
@@ -91,32 +140,3 @@ async function eliminarReservaPorId(id) {
 
 
 
-async function actualizarReservaPorId(req, res) {
-    const { id } = req.params;
-    const datosActualizados = req.body;
-
-    console.log('ID de la reserva:', id);
-    console.log('Datos actualizados:', datosActualizados);
-
-    try {
-        const resultado = await db.updateRecord(TABLA, datosActualizados, { id: id });
-        if (resultado.affectedRows > 0) {
-            respuesta.success(req, res, 'Reserva actualizada correctamente', 200);
-        } else {
-            respuesta.error(req, res, 'Reserva no encontrada', 404);
-        }
-    } catch (error) {
-        console.error('Error al actualizar reserva por ID:', error);
-        respuesta.error(req, res, 'Error al actualizar reserva', 500);
-        throw error;
-    }
-}
-
-module.exports = {
-    agregarReserva,
-    obtenerReservas,
-    //obtenerReservasConUsuarios,
-    obtenerReservaPorId,
-    eliminarReservaPorId,
-    actualizarReservaPorId
-};

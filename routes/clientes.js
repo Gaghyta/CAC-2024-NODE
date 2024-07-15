@@ -10,7 +10,7 @@ router.put('/:id', clienteController.actualizarClientePorId);
 router.delete('/:id', clienteController.eliminarClientePorId); */
 
 
-    router.get('/', async (req, res) => {
+  router.get('/', async (req, res) => {
     try {
       const clientes = await clienteController.obtenerClientes();
       res.setHeader('Content-Type', 'application/json');
@@ -36,15 +36,7 @@ router.delete('/:id', clienteController.eliminarClientePorId); */
     }
   });
   
-  router.post('/', async (req, res) => {
-    try {
-      const nuevoCliente = await clienteController.agregarCliente(req.body);
-      res.status(201).json(nuevoCliente);
-    } catch (error) {
-      console.error('Error al agregar cliente:', error);
-      res.status(500).json({ error: 'Error en el servidor' });
-    }
-  });
+  router.post('/', clienteController.agregarCliente);
   
   router.put('/:id', clienteController.actualizarClientePorId);
   
@@ -64,19 +56,3 @@ router.delete('/:id', clienteController.eliminarClientePorId); */
   });
   
   module.exports = router;
-  
-  /* router.put('/:id', async (req, res) => {
-    const clienteId = req.params.id;
-    try {
-      const clienteActualizado = await clienteController.actualizarClientePorId(clienteId, req.body);
-      if (!clienteActualizado) {
-        return res.status(404).json({ error: 'Cliente no encontrado' });
-      }
-      res.status(200).json(clienteActualizado);
-    } catch (error) {
-      console.error(`Error al actualizar cliente con ID ${clienteId}:`, error);
-      res.status(500).json({ error: 'Error en el servidor' });
-    }
-  }); */
-  
-

@@ -201,7 +201,7 @@ a.nav-link:hover {
 }
 
 /* ************************* MA-CUISINE ******************************** */
-/* Estilos para las imágenes 
+/*Estilos para las imágenes */
 .imagen-espacio-ma-cuisine {
   display: block;
   max-width: 80%;
@@ -216,7 +216,7 @@ a.nav-link:hover {
 .imagen-espacio-ma-cuisine.zoom {
   transform: scale(1.8);
 }
-*/
+
 /* ************************* MENU ******************************** */
 .menu-card {
   background-color: #1a1b1b;
@@ -234,7 +234,7 @@ a.nav-link:hover {
   color: #cfd2b5;
 }
 .menu-card-title {
-  color: #85f395;
+  color: #7ee28d;
   font-size: 24px;
   margin-bottom: 10px;
   text-align: center;
@@ -348,49 +348,7 @@ a.nav-link:hover {
 }
 /* Estilos para el modal */
 
-#login {
-  margin-top: 3em;
-  padding: 3em;
-  background-color: #1a1b1b;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(66, 52, 33, 0.2);
-}
 
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.modal-content {
-  margin: auto;
-  display: block;
-  width: auto;
-  max-width: 90vw;
-}
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .img-grid {
@@ -416,24 +374,82 @@ a.nav-link:hover {
 /* Estilos específicos de los modales */
 
 /* Estilos adicionales para manejar los nuevos IDs de los modales */
-#contenedor-registro,
-#contenedor-borrar-cuenta {
+
+
+
+.hidden {
   display: none;
 }
 
-/* Estilos específicos de los modales */
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  /*padding: 20px;*/
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  max-width: 90vw;
+}
+#central {
+  /*background-color: white;*/
+  max-width: 600px;
+  margin: auto;
+  padding: 2.5em;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#eliminar,
+#registro,
 #login {
   margin-top: 3em;
   padding: 3em;
   background-color: #1a1b1b;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(66, 52, 33, 0.2);
-}
-
-#central {
-  max-width: 600px;
-  margin: auto;
-  padding: 3em;
 }
 
 .titulo {
@@ -545,20 +561,68 @@ a.nav-link:hover {
   display: none;
 } 
 
+#eliminarUsuario-register-form,
+#eliminarUsuario-delete-account,
 #eliminarUsuario {
   color: #cda0b4;
   cursor: pointer;
 }
+#registrate-delete-account,
+#registrate-register-form,
 #registrate {
   color: #cda0b4;
   cursor: pointer;
 }
-#volverLogin 
-#volverLoginEliminar {
+#volverLogin,
+#volverLogin-eliminar-en-register-form,
+#volver-login-eliminar-en-delete-account {
   color: #cda0b4;
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 2.5px;
+}
+
+#body-clientes,
+#body-reserva{
+  background-color: #282b2b ;
+}
+
+.container.text-light h1,
+.container.text-light table,
+.container.text-lightth,
+.container.text-light td {
+    color: rgb(199, 194, 194);
+}
+.cuisine-danger {
+  background-color:#a88139 ; 
+  border: none;
+  color: #1a1b1b;
+  
+
+}
+.cuisine-warning {
+  background-color:#aa4444; 
+  border: none;
+  color: #1a1b1b;
+
+}
+
+#buscar-cliente-btn{
+  background-color:#1a1b1b; 
+  border: none;
+  color: #aa4444;
+
+}
+#buscar-cliente-btn:hover{
+  background-color:#aa4444; 
+  border: none;
+  color: #1a1b1b;
+
+}
+
+
+.table{
+  margin: 3em;
 }
 
 /* #login-form input[type="text"],

@@ -9,6 +9,8 @@ https://ma-cuisine-1b0b653444f3.herokuapp.com/
 
 primer deploy front:
 https://main--macuisinefrance.netlify.app/
+segundo deploy front con login:
+https://con-login-agregado--endearing-daffodil-c7c0e8.netlify.app/login
 
 Backend y frontend en rama: https://github.com/Gaghyta/CAC-2024-NODE/tree/front-y-back-fusion
 
