@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const reservaController = require('../modulos/reservas/controlador-reservas');
 const { error } = require('jquery');
-//router.get('/', reservaController.obtenerReservas);
+
 /* router.get('/', reservaController.obtenerReservas);
 router.get('/:id', reservaController.obtenerReservaPorId);
 router.post('/', reservaController.agregarReserva);
@@ -49,7 +49,9 @@ router.get('/', async (req, res) => {
 
   router.put('/:id', reservaController.actualizarReservaPorId);
 
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:id',reservaController.eliminarReservaPorId);
+
+  /* router.delete('/:id', async (req, res) => {
     const reservaId = req.params.id;
     //const mensajeOK = `Se ha eliminado el reserva numero ${reservaId}`;
     try {
@@ -62,6 +64,6 @@ router.get('/', async (req, res) => {
       console.error(`Error al eliminar reserva con ID ${reservaId}:`, error);
       return res.status(500).json({ error: 'Error en el servidor' });
     }
-  });
+  }); */
 
 module.exports = router;
