@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{     \n\"nombre\": \"Liam Gallagher\",\n\"edad\": 51,\n\"direccion\": \"calle Smith 23, Manchester\"\n}",
+					"raw": "{     \n\n\"direccion\": \"calle Stanford 3543, Indianápolis\",\n\"edad\": 102,\n\"nombre\": \"Kurt Vonnegut\"\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -311,6 +311,26 @@
 			"response": []
 		},
 		{
+			"name": "obtener-reservas-por-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "modificar-reserva",
 			"request": {
 				"method": "PUT",
@@ -467,6 +487,36 @@
 						"api",
 						"reservas",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar-reserva-por-id-Heroku",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:3000/api/reservas/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reservas",
+						"5"
 					]
 				}
 			},
