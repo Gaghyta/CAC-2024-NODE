@@ -63,6 +63,8 @@ router.delete('/:id', clienteController.eliminarClientePorId); */
     }
   });
   
+  module.exports = router;
+  
   /* router.put('/:id', async (req, res) => {
     const clienteId = req.params.id;
     try {
@@ -78,4 +80,3 @@ router.delete('/:id', clienteController.eliminarClientePorId); */
   }); */
   
 
-module.exports = router;

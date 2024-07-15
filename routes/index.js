@@ -72,12 +72,12 @@ router.get('/reservas', async (req, res) => {
 
 router.get('/api/reservas', async (req, res) => {
   try {
-    const clientes = await reservasController.obtenerReservas(); // Suponiendo que tienes una función asíncrona para obtener clientes
+    const reservas = await reservasController.obtenerReservas(); // Suponiendo que tienes una función asíncrona para obtener clientes
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', '*'); // Permite cualquier origen, ajusta según tus necesidades de seguridad
-    res.status(200).json(clientes); // Envía la respuesta JSON con los clientes obtenidos
+    res.status(200).json(reservas); // Envía la respuesta JSON con los clientes obtenidos
   } catch (error) {
-    console.error('Error al obtener clientes:', error);
+    console.error('Error al obtener reservas:', error);
     res.status(500).json({ error: 'Error en el servidor' });
   }
 });
