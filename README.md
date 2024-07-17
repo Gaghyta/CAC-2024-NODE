@@ -16,3 +16,6 @@ Backend y frontend en rama: https://github.com/Gaghyta/CAC-2024-NODE/tree/front-
 
 Server cloud
 https://console.clever-cloud.com/users/me/addons/addon_a0c71d4c-a54f-4acd-9e47-0432db52950c
+
+
+Coleccion de Postman disponible en el proyecto: CAC_NODE_2024-Completa.postman_collection.json
