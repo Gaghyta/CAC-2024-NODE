@@ -1,9 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
 body {
   background-color: #493d3d;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+#footer {
+  flex-shrink: 0;
+}
+
 header nav.navbar {
   background-color: #1a1b1b;
   display: flex;
@@ -144,7 +154,7 @@ p {
   border-color: #3ff45a;
   color: rgb(16, 22, 26);
 }
-.btn-info {
+/* .btn-info {
   background-color: #407047 !important;
   border-color: #224527 !important;
   color: rgb(16, 22, 26) !important;
@@ -153,7 +163,7 @@ p {
   background-color: #59562c !important;
   border-color: #313711 !important;
   color: rgb(16, 22, 26) !important;
-}
+} */
 .recordatorio-text-area {
   font-weight: 300;
   font: 0.95em sans-serif;
@@ -607,23 +617,191 @@ a.nav-link:hover {
 
 }
 
-#buscar-cliente-btn{
-  background-color:#1a1b1b; 
-  border: none;
-  color: #aa4444;
 
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
 }
-#buscar-cliente-btn:hover{
-  background-color:#aa4444; 
-  border: none;
-  color: #1a1b1b;
+#content-wrap {
+  padding-bottom: 2.5rem; /* Ajuste esto a la altura de su footer */
+}
 
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Altura del footer */
+}
+#modal-editar-cliente-guardar,
+#modal-editar-cliente-cerrar,
+#modal-cerrar-agregar-cliente-btn,
+#buscar-cliente-btn{
+  font: 600;
+  background-color:#245656!important; 
+  border: none;
+}
+#modal-editar-cliente-guardar:hover,
+#modal-editar-cliente-cerrar:hover,
+#modal-cerrar-agregar-cliente-btn:hover,
+#buscar-cliente-btn:hover{
+  font: 600;
+  background-color:#6c3253!important; 
+  border: none;
 }
 
 
 .table{
   margin: 3em;
 }
+
+
+.btn{
+  width: 250px;
+  letter-spacing: 0.5px!important;
+  font-weight: 500!important;
+  text-transform: uppercase!important;
+  text-align: center!important;
+  font-size: 1em!important;
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #f1e8e8!important;
+}
+
+#btn-editar{
+  color: #f1e8e8;
+  background-color:#a88139;
+}
+#btn-eliminar{
+color: #f1e8e8;
+background-color: #832e28;
+}
+
+#btn-editar:hover,
+#btn-eliminar:hover{
+background-color: #9bbcbc;
+transition: all 0.3s ease !important;
+display: flex;
+}
+
+#cliente-individual {
+  margin-top: 2em;
+  margin-bottom: 2em; 
+}
+
+#cliente-individual h3 {
+  color: rgb(199, 194, 194);
+  font-size: 2.5rem;
+  margin-bottom: 20px; 
+}
+
+#cliente-detalles {
+  background-color: rgba(57, 89, 96, 0.27); /* Negro translúcido */
+  border-top: 2px solid #FFE4E1; /* Rosa muy claro tirando a blanco */
+  border-bottom: 2px solid #FFE4E1;
+  padding: 2em;
+  margin-top: 2.5rem;
+  margin-bottom: 2em; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+#cliente-detalles p {
+  color: rgb(199, 194, 194);
+  margin-bottom: 1em; 
+  font-size: 1.25rem;
+}
+
+#cliente-individual .btn {
+  font-size: 1em; 
+  margin-right: 15px; 
+  margin-top: 10px; 
+}
+
+#buscar-cliente-btn {
+  width: 250px;
+  color: #e4ebeb!important;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  
+}
+
+#modal-guardar-cliente-btn{
+  background-color: #bc8d37!important;
+  color: #e4ebeb!important;
+}
+
+#agregar-cliente-btn:hover{
+  color: #e4ebeb!important;
+  background-color:#67508e!important;
+  color: #1a1b1b;
+  transition: all 0.3s ease !important;
+}
+
+#agregar-cliente-btn {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 250px; /* Ajusta este valor según el tamaño medio que desees */
+  background-color: #6c3253!important; /* Reemplaza YourColor con el código de color de tu paleta */
+  color: rgb(255, 255, 255); /* Color del texto, ajusta si es necesario */
+  transition: all 0.3s ease; /* Para una transición suave al hacer hover */
+}
+
+
+.agregar-cliente-btn:hover {
+  background-color: #7e5f25!important; /* Un tono más oscuro del color principal */
+  transition: all 0.3s ease !important;
+}
+
+
+/* Fondo oscuro para el contenido del modal */
+.modal-content {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Estilo para el encabezado del modal */
+.modal-header {
+  border-bottom: 1px solid #444 !important;
+}
+
+/* Estilo para el pie del modal */
+.modal-footer {
+  border-top: 1px solid #444 !important;
+}
+
+/* Estilo para los botones dentro del modal */
+.modal-content .btn-secondary {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+
+.modal-content .btn-primary {
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+
+/* Asegurarse de que los inputs tengan texto visible */
+.modal-content input {
+  background-color: #444 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
+}
+
+/* Estilo para las etiquetas en el modal */
+.modal-content label {
+  color: #fff !important;
+}
+
+
 
 /* #login-form input[type="text"],
 #login-form input[type="password"] {
