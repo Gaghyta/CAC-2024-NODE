@@ -10,29 +10,51 @@ const clientesController = require('../modulos/clientes/controlador-clientes');
 
 // **************  APP GET VIEWS **************
  
-router.get('/', (req, res) => {
+/* router.get('/', (req, res) => {
   //res.sendFile(path.join(__dirname, '../views', 'index.html'));
   res.sendFile(path.join(__dirname, '../views/index.html'));
-});
+}); */
 /*router.get('/', (req, res) => {
   res.redirect('/home');
 });*/
 
-router.get('/ma-cuisine', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/ma-cuisine.html'));
+router.get('/', (req, res) => {
+  res.render('index');
 });
+
+
+/* router.get('/ma-cuisine', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/ma-cuisine.html'));
+}); */
+
+router.get('/ma-cuisine', (req, res) => {
+  res.render('ma-cuisine');
+});
+
+/* router.get('/menu', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/menu.html'));
+});  */
 
 router.get('/menu', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/menu.html'));
-}); 
-
-
-router.get('/contacto', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/contacto.html'));
+  res.render('menu');
 });
 
-router.get('/login', (req, res) => {
+
+/* router.get('/contacto', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/contacto.html')); //con ejs no funciona cambiar a res.render
+}); */
+
+router.get('/contacto', (req, res) => {
+  res.render('contacto');
+});
+
+
+/* router.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/login.html'));
+}); */
+
+router.get('/login', (req, res) => {
+  res.render('login');
 });
 
 
