@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body>
+    <%- include('partials/header') %>
+    <div class="container-fluid">
+      <div class="text ma-cuisine-interior-text">
+        <h2 class="titulo-mcuisine">EL interior de Ma Cuisine</h2>
+        <p>
+          El diseño interior de Ma Cuisine es una celebración del buen gusto
+          francés: lámparas de araña elegantes, mesas de madera pulida, y
+          detalles en tonos suaves que evocan los bistrós parisinos. Grandes
+          ventanales permiten que la luz natural bañe el salón principal,
+          realzando la atmósfera relajada y elegante. El menú, cuidadosamente
+          elaborado por chefs con formación en las mejores tradiciones
+          culinarias de Francia, ofrece una selección de platos que destacan por
+          su autenticidad y creatividad. esde entrantes como el foie gras y las
+          ostras frescas, hasta platos principales como el magret de pato y el
+          bouillabaisse, cada creación refleja la pasión por los ingredientes
+          frescos y de alta calidad. Los postres, como el crème brûlée y el
+          tarte tatin, ponen un broche de oro a la experiencia culinaria. En Ma
+          Cuisine, cada detalle está pensado para ofrecer una experiencia
+          gastronómica excepcional, donde el encanto de la cocina francesa se
+          encuentra con la vibrante energía de Palermo, creando un oasis de
+          sabor y elegancia en el corazón de Buenos Aires.
+        </p>
+      </div>
+    </div>
+
+    <div class="img-grid">
+      <div class="column">
+        <img class="img-item" src="./img/ma-cuisine-espacio.png" alt="" />
+      </div>
+      <div class="column">
+        <div>
+          <img class="img-item" src="./img/nuestra-vajilla.jpeg" alt="" />
+        </div>
+        <div>
+          <img
+            class="img-item"
+            src="./img/cenital_bicerin_living.jpeg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Modal para mostrar la imagen aumentada -->
+    <div id="modal" class="modal">
+      <span id="close" class="close">&times;</span>
+      <img class="modal-content" id="modal-img" />
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script defer src="./js/js.js"></script>-->
+    <script>
+
+      const user = {
+        isAdmin: true // Cambia esto según el rol del usuario
+      };
+
+      // Verificar si el usuario es administrador y mostrar los enlaces de Usuarios y Clientes
+      if (user && user.isAdmin) {
+        const reservasLink = document.getElementById('reservas-link');
+        const clientesLink = document.getElementById('clientes-link');
+        if (reservasLink) {
+          reservasLink.style.display = 'block'; // Mostrar el enlace de Usuarios
+        }
+        if (clientesLink) {
+          clientesLink.style.display = 'block'; // Mostrar el enlace de Clientes
+        }
+      }
+  
+  </script>
+  </body>
+</html>
