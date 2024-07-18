@@ -19,7 +19,7 @@ const clientesController = require('../modulos/clientes/controlador-clientes');
 });*/
 
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {titulo: "mi titulo dinámico"});
 });
 
 
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 }); */
 
 router.get('/ma-cuisine', (req, res) => {
-  res.render('ma-cuisine');
+  res.render('ma-cuisine', {titulo: "mi titulo dinámico"});
 });
 
 /* router.get('/menu', (req, res) => {
